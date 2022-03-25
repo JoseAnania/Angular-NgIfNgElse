@@ -1,0 +1,31 @@
+<!--HTML de inicio-->
+
+<!--NgIf clásico-->
+<div class="container">
+    <div *ngIf="primero">
+        Usando NgIf {{primero}}
+    </div>
+
+    <div *ngIf="!primero">
+        1
+        <br>
+        <button class="btn btn-outline-primary" (click)="primero = 'Clásico'">
+      Probar
+    </button>
+    </div>
+</div>
+
+<!--NgIf Else-->
+<div class="container">
+    <div *ngIf="segundo; else segundoIf">
+        Usando NgIf {{segundo}}
+    </div>
+
+    <ng-template #segundoIf>
+        2
+        <br>
+        <button class="btn btn-outline-primary" (click)="segundo = 'Else'">
+          Probar
+        </button>
+    </ng-template>
+</div>
